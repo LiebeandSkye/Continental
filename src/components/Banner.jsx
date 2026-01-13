@@ -1,0 +1,60 @@
+import React, { useState, useEffect } from 'react';
+
+const Banner = () => {
+    // 1. Array of images (Place these in your /public/ folder)
+    const slides = [
+        { url: 'https://i.pinimg.com/1200x/55/9c/61/559c6147ac7363568a65a6f044958d32.jpg', title: 'Luxury Sedan' },
+        { url: 'https://i.pinimg.com/1200x/37/bc/48/37bc486f89bc4bc3fcc98d430b859f05.jpg    ', title: 'Sport SUV' },
+        { url: 'https://i.pinimg.com/1200x/3e/c5/21/3ec521a34cfcebd8c48579ec3703f669.jpg', title: 'Electric Future' }
+    ];
+
+    const [currentIndex, setCurrentIndex] = useState(0);
+
+    // 2. Logic to make it loop automatically
+    useEffect(() => {
+        const timer = setInterval(() => {
+            const isLastSlide = currentIndex === slides.length - 1;
+            const newIndex = isLastSlide ? 0 : currentIndex + 1;
+            setCurrentIndex(newIndex);
+        }, 6000);
+
+        return () => clearInterval(timer); // Cleanup timer on unmount
+    }, [currentIndex]);
+
+    return (
+        <div className='max-w-350 h-68.75 w-full m-auto py-4 px-10 relative group'>
+            {/* The Image Container */}
+            <div
+                style={{ backgroundImage: `url(${slides[currentIndex].url})` }}
+                className='w-full h-full rounded-3xl bg-center bg-cover duration-500 shadow-xl relative'
+            >
+                {/* Dark Overlay for text readability */}
+                <div className='absolute inset-0 bg-black/30 rounded-3xl'></div>
+
+                {/* Text Content */}
+                <div className='absolute bottom-12 left-12 text-white'>
+                    <h2 className='text-5xl font-bold mb-7 drop-shadow-lg'>
+                        {slides[currentIndex].title}
+                    </h2>
+                    <a className='bg-white text-black px-8 py-3 rounded-xl font-bold hover:bg-transparent border border-white hover:text-white transition-all duration-200' href='#Card'>
+                        Explore More
+                    </a>
+                </div>
+            </div>
+
+            {/* Navigation Dots */}
+            <div className='flex justify-center pt-4 gap-2'>
+                {slides.map((slide, slideIndex) => (
+                    <div
+                        key={slideIndex}
+                        onClick={() => setCurrentIndex(slideIndex)}
+                        className={`cursor-pointer transition-all duration-300 rounded-full 
+                            ${currentIndex === slideIndex ? 'bg-black w-8 h-2' : 'bg-gray-400 w-2 h-2'}`}
+                    ></div>
+                ))}
+            </div>
+        </div>
+    );
+};
+
+export default Banner;

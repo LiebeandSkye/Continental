@@ -1,0 +1,13 @@
+@import "tailwindcss";
+
+@layer components {
+    .link {
+        @apply text-gray-500 font-semibold hover:text-black transition-colors duration-300;
+    }
+    .active-link {
+        @apply text-black font-semibold text-lg transition-all duration-100;
+    }
+    .profile {
+        @apply w-6 h-6 rounded-full overflow-hidden border-2 border-white ;
+    }
+}
