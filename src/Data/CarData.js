@@ -64,5 +64,71 @@ export const CarData = [
         description: "A progressive work of art with breathtaking electric performance.",
         image: "https://images.unsplash.com/photo-1614200187524-dc4b892acf16?q=80&w=1000&auto=format&fit=crop",
         specs: { engine: "Quattro Electric", topSpeed: "155 mph" }
+    },
+    {
+        id: 7,
+        name: "Nissan GT-R Nismo",
+        brand: "Nissan",
+        category: "Sports",
+        country: "Japan",
+        price: 210000,
+        description: "Known as 'Godzilla,' this Japanese icon delivers terrifyingly fast acceleration and precision handling.",
+        image: "https://images.unsplash.com/photo-1552519507-da3b142c6e3d?q=80&w=1000&auto=format&fit=crop",
+        specs: { engine: "Twin-Turbo V6", topSpeed: "205 mph" }
+    },
+    {
+        id: 8,
+        name: "Toyota GR Supra",
+        brand: "Toyota",
+        category: "Sports",
+        country: "Japan",
+        price: 58000,
+        description: "A legend reborn. The GR Supra offers a perfect 50/50 weight distribution for the ultimate driver experience.",
+        image: "https://images.unsplash.com/photo-1616788471728-66236353995f?q=80&w=1000&auto=format&fit=crop",
+        specs: { engine: "3.0L Inline-6", topSpeed: "155 mph" }
+    },
+    {
+        id: 9,
+        name: "Honda NSX Type S",
+        brand: "Honda",
+        category: "Electric", // Hybrid/Electric category
+        country: "Japan",
+        price: 172000,
+        description: "The pinnacle of Japanese hybrid supercars, combining electric torque with a high-revving V6.",
+        image: "https://images.unsplash.com/photo-1601362840469-51e4d8d59085?q=80&w=1000&auto=format&fit=crop",
+        specs: { engine: "Hybrid Twin-Turbo V6", topSpeed: "191 mph" }
+    },
+    {
+        id: 10,
+        name: "Mazda CX-90",
+        brand: "Mazda",
+        category: "SUV",
+        country: "Japan",
+        price: 40000,
+        description: "Elegant Japanese craftsmanship meets a powerful inline-six engine in this flagship luxury SUV.",
+        image: "https://images.unsplash.com/photo-1681232847926-ec46280802c6?q=80&w=1000&auto=format&fit=crop",
+        specs: { engine: "3.3L Turbo I6", topSpeed: "130 mph" }
+    },
+    {
+        id: 11,
+        name: "Lexus LFA",
+        brand: "Lexus",
+        category: "Sports",
+        country: "Japan",
+        price: 375000,
+        description: "Famous for its screaming V10 engine, the LFA is a carbon-fiber masterpiece of Japanese precision.",
+        image: "https://images.unsplash.com/photo-1618342411210-639556778408?q=80&w=1000&auto=format&fit=crop",
+        specs: { engine: "4.8L V10", topSpeed: "202 mph" }
+    },
+    {
+        id: 12,
+        name: "Ferrari SF90 Stradale",
+        brand: "Ferrari",
+        category: "Electric", // PHEV category
+        country: "Italy",
+        price: 524000,
+        description: "A hybrid powerhouse from Maranello, redefining what a modern supercar can achieve.",
+        image: "https://images.unsplash.com/photo-1592198084033-aade902d1aae?q=80&w=1000&auto=format&fit=crop",
+        specs: { engine: "V8 Hybrid", topSpeed: "211 mph" }
     }
 ];

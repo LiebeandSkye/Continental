@@ -58,8 +58,7 @@ const StyledWrapper = styled.div`
     right: 2rem;  
     width: 360px;
     height: 150px;
-    background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(10px);
+    background-color: #fff;
     border-radius: 15px;
     z-index: 9999;
     margin: 0;

@@ -10,7 +10,7 @@ import { BsCart3 } from "react-icons/bs";
 const Nav = () => {
     return (
         <div>
-            <div className='flex items-center justify-between p-2 px-12 shadow-md h-18 relative gap-3'>
+            <div className='flex items-center justify-between py-[1%] px-12 shadow-md relative gap-3'>
                 <div className='z-10'>
                     <ul className="flex gap-7">
                         <li><NavLink className={({ isActive }) => isActive ? "active-link" : "link"} to="/">Home</NavLink></li>

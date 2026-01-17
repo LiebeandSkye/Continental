@@ -24,7 +24,7 @@ const Home = () => {
                 <div className='gap-10 mx-10 grow'>
                     <div className='flex justify-between'>
                         <Input />
-                        <button className='px-4 py-2 border border-gray-900 rounded-xl'>Sort By</button>
+                        <button className='px-4 py-2 border border-gray-900 rounded-xl cursor-pointer'>Sort By</button>
                     </div>
 
                     <Banner />

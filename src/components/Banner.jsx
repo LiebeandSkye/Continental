@@ -22,7 +22,7 @@ const Banner = () => {
     }, [currentIndex]);
 
     return (
-        <div className='max-w-350 h-68.75 w-full m-auto py-4 px-10 relative group'>
+        <div className='lg:h-[25%] h-[15%] w-full m-auto py-4 relative group'>
             {/* The Image Container */}
             <div
                 style={{ backgroundImage: `url(${slides[currentIndex].url})` }}
