@@ -6,12 +6,14 @@ import Card from './Card'
 import { useCart } from './CartContext'
 import Added_Card from '../Utilities/Added_Card'
 import ProCard from './ProCard'
+import Footer from './Footer'
+import { CiFilter } from "react-icons/ci";
 
 const Home = () => {
     const [showToast, setShowToast] = useState(false);
     const [activeProduct, setActiveProduct] = useState({ name: '', price: '' });
     const { addToCart } = useCart();
-
+    const [isFilterOpen, setIsFilterOpen] = useState(false);
     const handleAddToCart = (car) => {
         addToCart(car); 
         setActiveProduct({ name: car.name, price: `$${car.price}` });
@@ -19,14 +21,33 @@ const Home = () => {
     };
 
     return (
-        <div className="relative min-h-screen">
-            <div className='flex mx-5 pt-8'>
-                <Filter className='w-[25%]' />
-                <div className='gap-10 mx-10 grow'>
-                    <div className='flex justify-between'>
-                        <Input />
-                        <button className='px-4 py-2 border border-gray-900 rounded-xl'>Sort By</button>
+        <div className="relative min-h-screen bg-gray-100">
+            <div className='flex flex-col md:flex-row mx-4 md:mx-5 pt-8 gap-6 items-stretch'>
+                
+                {/* Filter Sidebar / Drawer */}
+                <Filter 
+                    isMobileOpen={isFilterOpen} 
+                    onClose={() => setIsFilterOpen(false)} 
+                />
+
+                <div className='grow flex flex-col gap-6 w-full'>
+                    <div className='flex flex-col sm:flex-row justify-between gap-4'>
+                        <div className="flex gap-2 grow">
+                            {/* Mobile Filter Trigger Button */}
+                            <button 
+                                onClick={() => setIsFilterOpen(true)}
+                                className='md:hidden p-3 bg-gray-900 text-white rounded-xl'
+                            >
+                                <CiFilter size={24} />
+                            </button>
+                            <Input />
+                        </div>
+                        
+                        <button className='px-4 py-2 border border-gray-900 rounded-xl bg-white whitespace-nowrap'>
+                            Sort By
+                        </button>
                     </div>
+
                     <Banner />
                     <Card onAdd={handleAddToCart} />
                 </div>

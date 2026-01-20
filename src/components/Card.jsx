@@ -16,14 +16,14 @@ const Card = ({ onAdd }) => {
     };
 
     return (
-        <div className='flex flex-col items-center min-h-screen' id='shop'>
+        <div className='flex flex-col' id='shop'>
             <div className='flex flex-wrap justify-center gap-12 mt-6'>
                 {currentCards.map((car) => (
-                    <div key={car.id} className='relative border border-gray-100 w-87 h-100 rounded-3xl overflow-hidden bg-white shadow-sm'>
+                    <div key={car.id} className='relative border w-89 h-100 rounded-3xl overflow-hidden bg-white shadow-sm'>
                         <div className='h-[55%] w-full overflow-hidden'>
-                            <img 
-                                className='w-full h-full object-cover hover:transition-transform duration-500 hover:scale-110' 
-                                src={car.image} 
+                            <img
+                                className='w-full h-full object-cover hover:transition-transform duration-500 hover:scale-110'
+                                src={car.image}
                                 alt={car.name}
                             />
                         </div>
@@ -47,9 +47,9 @@ const Card = ({ onAdd }) => {
                                     <span className='text-gray-400 text-sm font-medium'>Price: </span>
                                     <span className='font-bold text-xl text-black'>{`$${car.price}`}</span>
                                 </div>
-                                
-                                <button 
-                                    onClick={() => onAdd(car)} 
+
+                                <button
+                                    onClick={() => onAdd(car)}
                                     className="bg-black text-white px-5 py-2.5 rounded-2xl font-semibold text-sm hover:bg-gray-800 active:scale-95 transition-all shadow-lg shadow-gray-200 cursor-pointer"
                                 >
                                     Add to Cart
@@ -62,11 +62,11 @@ const Card = ({ onAdd }) => {
 
             {/* page number */}
             {totalPages > 1 && (
-                <div className="w-full max-w-7xl px-[6%] pb-[26%] flex justify-end">
-                    <Pagination 
-                        totalPages={totalPages} 
-                        currentPage={currentPage} 
-                        onPageChange={handlePageChange} 
+                <div className="w-full px-[6%] pb-12 flex justify-end">
+                    <Pagination
+                        totalPages={totalPages}
+                        currentPage={currentPage}
+                        onPageChange={handlePageChange}
                     />
                 </div>
             )}

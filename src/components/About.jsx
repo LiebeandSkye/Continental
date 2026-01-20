@@ -42,7 +42,7 @@ const About = () => {
             <div className="max-w-7xl mx-auto px-6 py-20 space-y-32">
 
                 {/* Our Adventure Section */}
-                <section className="flex flex-col md:flex-row overflow-hidden rounded-2xl shadow-2xl bg-gray-950" data-aos="fade-up">
+                <section className="flex flex-col md:flex-row overflow-hidden rounded-2xl shadow-2xl bg-gray-900" data-aos="fade-up">
                     <div className="md:w-1/2 p-12 text-white flex flex-col justify-center gap-6">
                         <h2 className="text-5xl font-bold">Our Adventure</h2>
                         <p className="text-gray-300 leading-relaxed">

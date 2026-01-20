@@ -20,17 +20,17 @@ const Banner = () => {
     }, [currentIndex]);
 
     return (
-        <div className='lg:h-[25%] h-[15%] w-full m-auto py-4 relative group'>
+        <div className='w-full h-75 md:h-96 py-4 relative group'>
             <div
                 style={{ backgroundImage: `url(${slides[currentIndex].url})` }}
                 className='w-full h-full rounded-3xl bg-center bg-cover duration-500 shadow-xl relative'
             >
                 <div className='absolute inset-0 bg-black/30 rounded-3xl'></div>  
-                <div className='absolute bottom-12 left-12 text-white'>
-                    <h2 className='text-5xl font-bold mb-7 drop-shadow-lg'>
+                <div className='absolute bottom-8 left-7 md:bottom-12 md:left-12 text-white'>
+                    <h2 className='md:text-5xl text-3xl font-bold md:mb-7 mb-4 drop-shadow-lg'>
                         {slides[currentIndex].title}
                     </h2>
-                    <a className='bg-white text-black px-8 py-3 rounded-xl font-bold hover:bg-transparent border border-white hover:text-white transition-all duration-200' href='#shop'>
+                    <a className='bg-white px-5 py-2 text-black md:px-8 md:py-3 rounded-xl font-bold hover:bg-transparent border border-white hover:text-white transition-all duration-200' href='#shop'>
                         Explore More
                     </a>
                 </div>

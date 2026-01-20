@@ -12,14 +12,18 @@ const App = () => {
   return (
     <CartProvider>
       <Router>
-        <Nav />
-        <CartDrawer /> {/* Context API btw */}
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/contact" element={<Contact />} />
-        </Routes>
-        <Footer />
+        <div className="flex flex-col min-h-screen">
+          <Nav/>
+          <CartDrawer />
+          <main className="grow">
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/about" element={<About />} />
+              <Route path="/contact" element={<Contact />} />
+            </Routes>
+          </main>
+          <Footer/>
+        </div>
       </Router>
     </CartProvider>
   )
