@@ -16,8 +16,8 @@ const Footer = () => {
             links: ["Terms", "Privacy", "Cookies", "Licenses", "Settings"]
         },
         {
-            title: "Support",
-            links: ["Help Center", "Community", "Safety", "Status", "FAQ"]
+            title: "Made by",
+            links: ["Sak", "Tuna","Gemini","Chatgpt", "and some website components"]
         }
     ];
 
@@ -35,7 +35,7 @@ const Footer = () => {
                                     <a 
                                         key={link} 
                                         href={`#${link.toLowerCase()}`}
-                                        className='text-lg font-medium text-gray-400 hover:text-white transition-colors duration-200'
+                                        className='text-lg font-medium text-gray-400 hover:text-white transition-colors duration-200 cursor-pointer'
                                     >
                                         {link}
                                     </a>

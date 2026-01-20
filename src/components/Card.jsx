@@ -16,7 +16,7 @@ const Card = ({ onAdd }) => {
     };
 
     return (
-        <div className='flex flex-col items-center min-h-screen'>
+        <div className='flex flex-col items-center min-h-screen' id='shop'>
             <div className='flex flex-wrap justify-center gap-12 mt-6'>
                 {currentCards.map((car) => (
                     <div key={car.id} className='relative border border-gray-100 w-87 h-100 rounded-3xl overflow-hidden bg-white shadow-sm'>

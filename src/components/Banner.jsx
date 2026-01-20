@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
 const Banner = () => {
-    // 1. Array of images (Place these in your /public/ folder)
     const slides = [
         { url: 'https://i.pinimg.com/1200x/55/9c/61/559c6147ac7363568a65a6f044958d32.jpg', title: 'Luxury Sedan' },
         { url: 'https://i.pinimg.com/1200x/37/bc/48/37bc486f89bc4bc3fcc98d430b859f05.jpg    ', title: 'Sport SUV' },
@@ -10,7 +9,6 @@ const Banner = () => {
 
     const [currentIndex, setCurrentIndex] = useState(0);
 
-    // 2. Logic to make it loop automatically
     useEffect(() => {
         const timer = setInterval(() => {
             const isLastSlide = currentIndex === slides.length - 1;
@@ -18,31 +16,26 @@ const Banner = () => {
             setCurrentIndex(newIndex);
         }, 6000);
 
-        return () => clearInterval(timer); // Cleanup timer on unmount
+        return () => clearInterval(timer);
     }, [currentIndex]);
 
     return (
         <div className='lg:h-[25%] h-[15%] w-full m-auto py-4 relative group'>
-            {/* The Image Container */}
             <div
                 style={{ backgroundImage: `url(${slides[currentIndex].url})` }}
                 className='w-full h-full rounded-3xl bg-center bg-cover duration-500 shadow-xl relative'
             >
-                {/* Dark Overlay for text readability */}
-                <div className='absolute inset-0 bg-black/30 rounded-3xl'></div>
-
-                {/* Text Content */}
+                <div className='absolute inset-0 bg-black/30 rounded-3xl'></div>  
                 <div className='absolute bottom-12 left-12 text-white'>
                     <h2 className='text-5xl font-bold mb-7 drop-shadow-lg'>
                         {slides[currentIndex].title}
                     </h2>
-                    <a className='bg-white text-black px-8 py-3 rounded-xl font-bold hover:bg-transparent border border-white hover:text-white transition-all duration-200' href='#Card'>
+                    <a className='bg-white text-black px-8 py-3 rounded-xl font-bold hover:bg-transparent border border-white hover:text-white transition-all duration-200' href='#shop'>
                         Explore More
                     </a>
                 </div>
             </div>
 
-            {/* Navigation Dots */}
             <div className='flex justify-center pt-4 gap-2'>
                 {slides.map((slide, slideIndex) => (
                     <div

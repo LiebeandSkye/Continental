@@ -5,7 +5,7 @@ export const CarData = [
         brand: "Ford",
         category: "Sports",
         country: "Germany",
-        price: 1000,
+        price: 676767,
         description: "A legendary masterpiece of German engineering, optimized for track performance.",
         image: "https://images.unsplash.com/photo-1544829099-b9a0c07fad1a?q=80&w=1000&auto=format&fit=crop",
         specs: { engine: "V8 Turbo", topSpeed: "210 mph" }
@@ -84,7 +84,7 @@ export const CarData = [
         country: "Japan",
         price: 58000,
         description: "A legend reborn. The GR Supra offers a perfect 50/50 weight distribution for the ultimate driver experience.",
-        image: "https://images.unsplash.com/photo-1616788471728-66236353995f?q=80&w=1000&auto=format&fit=crop",
+        image: "https://i.pinimg.com/736x/5f/3b/e5/5f3be560a5034f3f823fbed8f48e773d.jpg",
         specs: { engine: "3.0L Inline-6", topSpeed: "155 mph" }
     },
     {
@@ -95,7 +95,7 @@ export const CarData = [
         country: "Japan",
         price: 172000,
         description: "The pinnacle of Japanese hybrid supercars, combining electric torque with a high-revving V6.",
-        image: "https://images.unsplash.com/photo-1601362840469-51e4d8d59085?q=80&w=1000&auto=format&fit=crop",
+        image: "https://i.pinimg.com/1200x/bc/93/ad/bc93ad1d8643074bf45c751d807fd66b.jpg",
         specs: { engine: "Hybrid Twin-Turbo V6", topSpeed: "191 mph" }
     },
     {
@@ -106,7 +106,7 @@ export const CarData = [
         country: "Japan",
         price: 40000,
         description: "Elegant Japanese craftsmanship meets a powerful inline-six engine in this flagship luxury SUV.",
-        image: "https://images.unsplash.com/photo-1681232847926-ec46280802c6?q=80&w=1000&auto=format&fit=crop",
+        image: "https://i.pinimg.com/1200x/20/a5/f5/20a5f5e6136e2b4e9d42694792bb1278.jpg",
         specs: { engine: "3.3L Turbo I6", topSpeed: "130 mph" }
     },
     {
@@ -117,7 +117,7 @@ export const CarData = [
         country: "Japan",
         price: 375000,
         description: "Famous for its screaming V10 engine, the LFA is a carbon-fiber masterpiece of Japanese precision.",
-        image: "https://images.unsplash.com/photo-1618342411210-639556778408?q=80&w=1000&auto=format&fit=crop",
+        image: "https://i.pinimg.com/736x/c6/91/79/c6917905ecf169ec317ed14e67b3f319.jpg",
         specs: { engine: "4.8L V10", topSpeed: "202 mph" }
     },
     {

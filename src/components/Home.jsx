@@ -1,17 +1,19 @@
-import React, { useState } from 'react' // Import useState here!
+import React, { useState } from 'react'
 import Filter from './Filter'
 import Input from './Input'
 import Banner from './Banner'
 import Card from './Card'
+import { useCart } from './CartContext'
 import Added_Card from '../Utilities/Added_Card'
-import '../global.css'
-import {CarData} from '../Data/CarData'
+import ProCard from './ProCard'
 
 const Home = () => {
     const [showToast, setShowToast] = useState(false);
     const [activeProduct, setActiveProduct] = useState({ name: '', price: '' });
+    const { addToCart } = useCart();
 
     const handleAddToCart = (car) => {
+        addToCart(car); 
         setActiveProduct({ name: car.name, price: `$${car.price}` });
         setShowToast(true);
     };
@@ -20,19 +22,16 @@ const Home = () => {
         <div className="relative min-h-screen">
             <div className='flex mx-5 pt-8'>
                 <Filter className='w-[25%]' />
-
                 <div className='gap-10 mx-10 grow'>
                     <div className='flex justify-between'>
                         <Input />
-                        <button className='px-4 py-2 border border-gray-900 rounded-xl cursor-pointer'>Sort By</button>
+                        <button className='px-4 py-2 border border-gray-900 rounded-xl'>Sort By</button>
                     </div>
-
                     <Banner />
-
-                    {/* Pass the toggle function to the Card */}
                     <Card onAdd={handleAddToCart} />
                 </div>
             </div>
+
             <Added_Card
                 isVisible={showToast} 
                 onClose={() => setShowToast(false)} 
