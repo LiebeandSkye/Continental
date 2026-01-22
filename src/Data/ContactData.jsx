@@ -9,8 +9,8 @@ export const CoData = [
         id:1,
         name: "Phone",
         icon: <FaPhoneAlt />,
-        info1: "+(885) 858 359 28",
-        info2: "+(885) 000 000 00",
+        info1: "+(885) 676 676 67",
+        info2: "+(885) 696 696 69",
     },
 
     {
@@ -18,15 +18,15 @@ export const CoData = [
         name: "Email",
         icon: <MdEmail />,
         info1: "TunaFish@gmail.com",
-        info2: "example@gmail.com",
+        info2: "SakThe67@gmail.com",
     },
 
     {
         id:3,
         name: "Hours",
         icon: <MdWork />,
-        info1: "example",
-        info2: "example",
+        info1: "6:00 AM - 7:00 PM",
+        info2: "67 is The best hours to work",
     },
 
     {
@@ -34,8 +34,8 @@ export const CoData = [
         name: "Address",
         icon: <FaLocationDot />
 ,
-        info1: "example",
-        info2: "example",
+        info1: "St 67 No 69",
+        info2: "Ohio",
     },
 
 ];
