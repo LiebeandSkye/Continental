@@ -1,14 +1,10 @@
 import React from 'react';
 import styled from 'styled-components';
 
-// Accept isOpen and onClick from Nav.jsx
 const Burger = ({ isOpen, onClick, className }) => {
     return (
         <StyledWrapper className={className}>
             <label className="burger" htmlFor="burger">
-                {/* 1. 'checked' is driven by the isOpen prop
-                  2. 'onChange' triggers the toggleMenu function in Nav.jsx 
-                */}
                 <input 
                     type="checkbox" 
                     id="burger" 
