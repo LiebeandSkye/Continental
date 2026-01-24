@@ -37,7 +37,7 @@ const Card = ({ onAdd, searchTerm, filters }) => {
 
     return (
         <div className='flex flex-col' id='shop'>
-            <div className='flex flex-wrap md:pl-8 gap-12 mt-6'>
+            <div className='flex flex-wrap md:pl-8 gap-12 mt-6 justify-center md:justify-start'>
                 {currentCards.length > 0 ? (
                     currentCards.map((car) => (
                         <div key={car.id} className='relative w-89 h-100 rounded-3xl overflow-hidden bg-white shadow-sm hover:shadow-xl transition-shadow duration-300'>
