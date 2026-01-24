@@ -28,7 +28,7 @@ const About = () => {
                 >
                     <source src={CarVideo1} type="video/mp4" />
                 </video>
-                <div className="absolute inset-0 bg-black/50" /> {/* Slightly darker for better text contrast */}
+                <div className="absolute inset-0 bg-black/50" />
                 <div className="relative z-10 flex h-full flex-col items-center justify-center text-center px-6 text-white">
                     <h1 className="text-5xl md:text-7xl font-bold mb-4">About Continental</h1>
                     <p className="max-w-2xl text-lg opacity-90">
@@ -46,14 +46,14 @@ const About = () => {
                     <div className="md:w-1/2 p-12 text-white flex flex-col justify-center gap-6">
                         <h2 className="text-5xl font-bold">Our Adventure</h2>
                         <p className="text-gray-300 leading-relaxed">
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis amet quis placeat distinctio expedita, modi, veniam aliquam unde nulla...
+                            This is our school project, we very much like this project (sarcasm), we totally enjoy doing this and hope we can do more in the future (aw hell nah)
                         </p>
                         <p className="text-gray-300 leading-relaxed">
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis amet quis placeat distinctio expedita...
+                            We can't find a good image ,so we use this Independence of Monument image because it looks cool and yes we can't find better image.
                         </p>
                     </div>
                     <div className="md:w-1/2">
-                        <img src={Porsche} alt="Porsche" className="w-full h-full object-cover" />
+                        <img src='https://imgs.search.brave.com/LpcknSNj3hhUiqk5FYWb_hQuS39gy9xiS0nU4H2xG6I/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly93d3cu/ZXhwZXJpZW5jZXRy/YXZlbGdyb3VwLmNv/bS93cC1jb250ZW50/L3NtdXNoLXdlYnAv/MjAyNS8wNy9tYXJr/LUprSTRfc01ubE9n/LXVuc3BsYXNoLTEt/c2NhbGVkLmpwZy53/ZWJw' alt="Porsche" className="w-full h-full object-cover" />
                     </div>
                 </section>
 

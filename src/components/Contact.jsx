@@ -8,7 +8,7 @@ const Contact = () => {
     const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(address)}`;
 
     return (
-        <section className="w-full min-h-screen bg-white text-[#1a1a1a] font-sans overflow-x-hidden">
+        <section className="w-full min-h-screen bg-white text-[#1a1a1a] overflow-x-hidden">
             
             {/* background video */}
             <div className="fixed top-0 left-0 w-full h-[60vh] z-0">
@@ -35,10 +35,10 @@ const Contact = () => {
                             
                             {/* Top area */}
                             <div className="mb-24 text-center flex flex-col justify-center items-center">
-                                <h1 className="text-6xl md:text-8xl font-bold tracking-tighter mb-6 uppercase italic">
-                                    Contact us
+                                <h1 className="uppercase text-6xl md:text-7xl font-semibold tracking-tighter mb-6">
+                                    Contact Us
                                 </h1>
-                                <p className="text-xl text-gray-600 max-w-2xl font-light leading-relaxed">
+                                <p className="text-xl text-gray-600 max-w-2xl leading-relaxed">
                                     We specialize in the acquisition and sale of premium German and Italian automobiles. 
                                     How may we assist your journey today?
                                 </p>

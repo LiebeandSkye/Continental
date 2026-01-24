@@ -19,10 +19,12 @@ const CartDrawer = () => {
                     <div className="p-6 border-b flex justify-between items-center">
                         <div>
                             <div className='flex items-center gap-5'>
+                                <div>
                                 <h2 className="text-2xl font-bold text-gray-900">My 67 Garage</h2>
-                                <img className='w-12 h-full' src='https://imgs.search.brave.com/-Z1YBigK1wZez_WoXVGM8TW2uiNKEvsCLEs4reCxtQQ/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS50ZW5vci5jb20v/NkNPTXE2ejNsNW9B/QUFBTS9ib3Nub3Yt/NjcuZ2lm.gif'></img>
+                                <p className="text-gray-500 text-sm">{cartItems.length} items reserved</p>
+                                </div>
+                                <img className='w-15 h-full pb-1 rounded-md' src='https://imgs.search.brave.com/-Z1YBigK1wZez_WoXVGM8TW2uiNKEvsCLEs4reCxtQQ/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS50ZW5vci5jb20v/NkNPTXE2ejNsNW9B/QUFBTS9ib3Nub3Yt/NjcuZ2lm.gif'></img>
                             </div>
-                            <p className="text-gray-500 text-sm">{cartItems.length} items reserved</p>
                         </div>
                         <button onClick={toggleCart} className="p-2 hover:bg-gray-100 rounded-full transition-colors">
                             <IoClose size={28} />

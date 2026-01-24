@@ -1,14 +1,14 @@
 import React, { useState } from 'react';
 import { CiFilter } from "react-icons/ci";
 import { IoIosArrowDown, IoMdClose } from "react-icons/io";
-
+import { RiDeleteBin6Line } from "react-icons/ri";
 const DropdownItem = ({ title, children }) => {
     const [isOpen, setIsOpen] = useState(false);
 
     return (
         <div className='mt-4 border-b border-gray-700 pb-2'>
-            <div 
-                className='flex justify-between items-center cursor-pointer' 
+            <div
+                className='flex justify-between items-center cursor-pointer'
                 onClick={() => setIsOpen(!isOpen)}
             >
                 <h1 className='text-white font-medium hover:text-gray-300 transition-colors'>
@@ -25,13 +25,25 @@ const DropdownItem = ({ title, children }) => {
     );
 };
 
-const Filter = ({ isMobileOpen, onClose }) => {
+const Filter = ({ isMobileOpen, onClose, filters, onFilterChange, searchTerm }) => {
+    const categories = ['SUV', 'Electric', 'Sports'];
+    const brands = ['Tesla', 'BMW', 'Mercedes', 'Ford', 'Porsche', 'Audi', 'Nissan', 'Toyota', 'Honda', 'Mazda', 'Lexus', 'Ferrari'];
+    const countries = ['Germany', 'USA', 'Japan', 'Italy'];
+    const FilterOption = ({ type, value }) => (
+        <p
+            onClick={() => onFilterChange(type, value)}
+            className={`cursor-pointer transition-colors ${filters[type] === value ? 'text-white font-bold' : 'text-gray-400 hover:text-white'
+                }`}
+        >
+            {value}
+        </p>
+    );
     return (
         <>
             {/* MOBILE OVERLAY */}
             {isMobileOpen && (
-                <div 
-                    className="fixed inset-0 bg-black/50 z-[6000] md:hidden" 
+                <div
+                    className="fixed inset-0 bg-black/50 z-[6000] md:hidden"
                     onClick={onClose}
                 ></div>
             )}
@@ -54,35 +66,26 @@ const Filter = ({ isMobileOpen, onClose }) => {
                         <IoMdClose />
                     </button>
                 </div>
-
                 <div className="overflow-y-auto flex-grow pr-2 custom-scrollbar">
                     <DropdownItem title="Browse by Category">
-                        <p className='hover:text-white cursor-pointer'>SUV</p>
-                        <p className='hover:text-white cursor-pointer'>Electric</p>
-                        <p className='hover:text-white cursor-pointer'>Sports</p>
+                        {categories.map(cat => <FilterOption key={cat} type="category" value={cat} />)}
                     </DropdownItem>
 
                     <DropdownItem title="Brand">
-                        <p className='hover:text-white cursor-pointer'>Tesla</p>
-                        <p className='hover:text-white cursor-pointer'>BMW</p>
-                        <p className='hover:text-white cursor-pointer'>Mercedes</p>
-                        <p className='hover:text-white cursor-pointer'>Ford</p>
-                        <p className='hover:text-white cursor-pointer'>Porsche</p>
-                        <p className='hover:text-white cursor-pointer'>Audi</p>
-                        <p className='hover:text-white cursor-pointer'>Nissan</p>
-                        <p className='hover:text-white cursor-pointer'>Toyota</p>
-                        <p className='hover:text-white cursor-pointer'>Honda</p>
-                        <p className='hover:text-white cursor-pointer'>Mazda</p>
-                        <p className='hover:text-white cursor-pointer'>Lexus</p>
-                        <p className='hover:text-white cursor-pointer'>Ferrari</p>
+                        {brands.map(brand => <FilterOption key={brand} type="brand" value={brand} />)}
                     </DropdownItem>
 
                     <DropdownItem title="Country">
-                        <p className='hover:text-white cursor-pointer'>Germany</p>
-                        <p className='hover:text-white cursor-pointer'>USA</p>
-                        <p className='hover:text-white cursor-pointer'>Japan</p>
-                        <p className='hover:text-white cursor-pointer'>Italy</p>
+                        {countries.map(c => <FilterOption key={c} type="country" value={c} />)}
                     </DropdownItem>
+                    {(filters.category || filters.brand || filters.country || searchTerm) && (
+                        <button
+                            onClick={() => onFilterChange('reset', '')}
+                            className="mt-10 text-sm text-red-400 hover:text-red-300 underline flex gap-1 justify-center items-center"
+                        >
+                            <RiDeleteBin6Line  /> Clear All
+                        </button>
+                    )}
                 </div>
             </div>
         </>

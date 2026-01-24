@@ -8,27 +8,27 @@ export const Doda = [
         id: 1,
         icon:<IoIosHeartEmpty />,
         name: "Passion",
-        des: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
+        des: "Wow we're so passionate doing this :)",
     },
 
     {
         id: 2,
         icon:<VscWorkspaceTrusted />,
         name: "TrustWorthy",
-        des: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
+        des: "trust us please we give money",
     },
 
     {
         id: 3,
         icon:<SiBetfair />,
         name: "Fair",
-        des: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
+        des: "we are very fair if you give us your money first",
     },
 
     {
         id: 4,
         icon:<PiHandshake />,
         name: "Honest",
-        des: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
+        des: "we never lie about anything (trust)",
     },
 ]

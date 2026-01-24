@@ -6,6 +6,7 @@ import { HiMenuAlt2, HiX } from "react-icons/hi"; // Icons for burger menu
 import LogoDeer from '../assets/LogoDeer.png'
 import Chisa from '../assets/Chisa.jpg'
 import Input_Mobile from './Input_Mobile'
+import Input from './Input'
 import Burger from '../Utilities/Burger'
 import '../global.css'
 
@@ -16,16 +17,14 @@ const Nav = () => {
     const toggleMenu = () => setIsOpen(!isOpen);
 
     return (
-        <nav className='flex items-center justify-between shadow-xl py-3 px-6 md:px-12 sticky bg-white z-[5000]'>
-
-            {/* 1. LEFT SIDE: Burger Menu (Mobile) & NavLinks (Desktop) */}
+        <nav className='flex items-center justify-between shadow-xl py-3 px-6 md:pl-12 md:pr-5 w-full bg-white z-[5000]'>
             <div className='flex items-center z-50'>
                 <Burger
                     isOpen={isOpen}
                     onClick={toggleMenu}
                     className='md:hidden'
                 />
-
+                {/* menu for mobile */}
                 <ul className="hidden md:flex gap-7">
                     <li><NavLink className={({ isActive }) => isActive ? "active-link" : "link"} to="/">Home</NavLink></li>
                     <li><NavLink className={({ isActive }) => isActive ? "active-link" : "link"} to="/about">About</NavLink></li>
@@ -33,7 +32,7 @@ const Nav = () => {
                 </ul>
             </div>
 
-            {/* 2. CENTER: Logo (Always Centered) */}
+            {/* logo */}
             <div className='absolute left-1/2 transform -translate-x-1/2 flex items-center pointer-events-none'>
                 <img src={LogoDeer} alt="Logo" className="w-16 h-16 md:w-16 md:h-16" />
                 <div className='hidden lg:block'>
@@ -42,7 +41,7 @@ const Nav = () => {
                 </div>
             </div>
 
-            {/* 3. RIGHT SIDE: Cart & Desktop Profile */}
+            {/* cart and account for laptop*/}
             <div className='flex items-center gap-2 md:gap-3 z-50'>
                 <div
                     onClick={toggleCart}
@@ -56,14 +55,14 @@ const Nav = () => {
                     )}
                 </div>
 
-                {/* Profile - Hidden on mobile, shown in side menu instead */}
-                <div className='hidden md:flex bg-gray-900 pr-5 pl-2 py-1.5 items-center rounded-xl'>
+                {/* Profile - Hidden on mobile */}
+                <div className='hidden md:flex bg-gray-900 pr-5 pl-2 py-2 items-center rounded-xl'>
                     <img src={Chisa} className="w-7 h-7 rounded-full object-cover" alt="Profile" />
                     <p className='text-white ml-2 text-sm'>Chisa</p>
                 </div>
             </div>
 
-            {/* 4. MOBILE SIDEBAR MENU */}
+            {/* mobile menu */}
             <div className={`fixed top-0 left-0 h-full w-[70%] bg-white shadow-2xl transform transition-transform duration-300 ease-in-out z-[4999] p-6 ${isOpen ? 'translate-x-0' : '-translate-x-full'} md:hidden`}>
                 <div className='flex items-center mb-2'>
                     <div>
@@ -74,10 +73,8 @@ const Nav = () => {
                         <p className='text-xs'>Premium Cars</p>
                     </div>
                 </div>
-                {/* Search Bar in Mobile Menu */}
-                <div className="mb-8">
-                    <Input_Mobile />
-                </div>
+                {/* EMPTY SPACE BELOW LOGO FOR FUTURE USES */}
+                
 
                 <ul className="flex flex-col gap-6 text-lg font-medium">
                     <li><NavLink onClick={toggleMenu} className={({ isActive }) => isActive ? "active-link" : "link"} to="/">Home</NavLink></li>
