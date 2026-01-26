@@ -1,10 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import { CarData } from '../Data/CarData';
 import Pagination from '../Utilities/Pagination';
+import { IoClose } from "react-icons/io5";
+import { GiSpeedometer } from "react-icons/gi";
+import { PiEngineFill } from "react-icons/pi";
 
 const Card = ({ onAdd, searchTerm, filters }) => {
     const [currentPage, setCurrentPage] = useState(1);
     const cardsPerPage = 6;
+    const [selectedCar, setSelectedCar] = useState(null); //modal
 
     // resets back to firwst page when there empty container
     useEffect(() => {
@@ -62,18 +66,25 @@ const Card = ({ onAdd, searchTerm, filters }) => {
                                     </p>
                                 </div>
 
-                                <div className='flex justify-between items-center pt-3 border-t border-gray-50'>
+                                <div className='flex justify-between items-end pt-3 border-t border-gray-50'>
                                     <div className='flex flex-col'>
                                         <span className='text-gray-400 text-sm font-medium'>Price: </span>
                                         <span className='font-bold text-xl text-black'>{`$${car.price.toLocaleString()}`}</span>
                                     </div>
-
-                                    <button
-                                        onClick={() => onAdd(car)}
-                                        className="bg-black text-white px-5 py-2.5 rounded-2xl font-semibold text-sm hover:bg-gray-800 active:scale-95 transition-all shadow-lg shadow-gray-200 cursor-pointer"
-                                    >
-                                        Add to Cart
-                                    </button>
+                                    <div className='flex gap-2'>
+                                        <button
+                                            onClick={() => setSelectedCar(car)}
+                                            className="bg-black text-white px-4 py-2 rounded-xl font-bold text-xs hover:bg-gray-800 transition-all cursor-pointer"
+                                        >
+                                            View Details
+                                        </button>
+                                        <button
+                                            onClick={() => onAdd(car)}
+                                            className="bg-black text-white px-4 py-2 rounded-xl font-bold text-xs hover:bg-gray-800 transition-all cursor-pointer"
+                                        >
+                                            Add to Cart
+                                        </button>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -86,7 +97,7 @@ const Card = ({ onAdd, searchTerm, filters }) => {
                 )}
             </div>
 
-            {/* Pagination numbers*/}
+            {/* Page numbers*/}
             {totalPages > 1 && (
                 <div className="w-full px-[6%] flex justify-end">
                     <Pagination
@@ -96,6 +107,65 @@ const Card = ({ onAdd, searchTerm, filters }) => {
                     />
                 </div>
             )}
+            {/* Modal */}
+            {selectedCar && (
+                <div className="fixed inset-0 z-[9999] flex items-center justify-center p-4 sm:p-6">
+                    <div className="absolute inset-0 bg-black/80 backdrop-blur-md" onClick={() => setSelectedCar(null)}></div>               
+                    {/* info */}
+                    <div className="relative bg-white w-full max-w-4xl rounded-[2.5rem] overflow-hidden shadow-2xl flex flex-col md:flex-row animate-in fade-in zoom-in duration-300">
+                        <button 
+                            onClick={() => setSelectedCar(null)}
+                            className="absolute top-5 right-5 z-10 bg-white/10 backdrop-blur-md text-white p-2 rounded-full hover:bg-white hover:text-black transition-all md:text-black md:bg-gray-100"
+                        >
+                            <IoClose size={24} />
+                        </button>
+
+                        {/* Left content */}
+                        <div className="w-full md:w-1/2 h-64 md:h-auto">
+                            <img src={selectedCar.image} className="w-full h-full object-cover" alt={selectedCar.name} />
+                        </div>
+
+                        {/* Right content for info */}
+                        <div className="w-full md:w-1/2 p-8 md:p-12 flex flex-col">
+                            <div className="mb-6">
+                                <span className="text-xs font-black uppercase text-gray-800">{selectedCar.brand} • {selectedCar.category}</span>
+                                <h2 className="text-3xl md:text-4xl font-black text-gray-900 mt-2">{selectedCar.name}</h2>
+                                <p className="text-gray-500 mt-4 leading-relaxed">{selectedCar.description}</p>
+                            </div>
+                            {/* Specs of car */}
+                            <div className="grid grid-cols-2 gap-4 mb-8">
+                                <div className="bg-gray-50 p-4 rounded-2xl flex items-center gap-3">
+                                    <PiEngineFill className="text-2xl text-gray-900" />
+                                    <div>
+                                        <p className="text-[10px] uppercase font-bold text-gray-400">Engine</p>
+                                        <p className="text-sm font-bold">{selectedCar.specs?.engine || "Electric"}</p>
+                                    </div>
+                                </div>
+                                <div className="bg-gray-50 p-4 rounded-2xl flex items-center gap-3">
+                                    <GiSpeedometer className="text-2xl text-gray-900" />
+                                    <div>
+                                        <p className="text-[10px] uppercase font-bold text-gray-400">Top Speed</p>
+                                        <p className="text-sm font-bold">{selectedCar.specs?.topSpeed || "N/A"}</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="mt-auto pt-6 border-t border-gray-100 flex items-end justify-between gap-6">
+                                <div>
+                                    <p className="text-[10px] font-black uppercase text-gray-400 tracking-wider">MSRP Starting at</p>
+                                    <p className="text-3xl font-black text-black">${selectedCar.price.toLocaleString()}</p>
+                                </div>
+                                <button 
+                                    onClick={() => { onAdd(selectedCar); setSelectedCar(null); }}
+                                    className="bg-black text-white px-5 py-3 md:px-8 md:py-4 rounded-2xl font-bold hover:bg-gray-800 transition-all active:scale-95 shadow-xl shadow-gray-200"
+                                >
+                                    Add to Cart
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            )}
+
         </div>
     );
 };

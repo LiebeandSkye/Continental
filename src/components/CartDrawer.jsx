@@ -26,7 +26,7 @@ const CartDrawer = () => {
                                 <img className='w-15 h-full pb-1 rounded-md' src='https://imgs.search.brave.com/-Z1YBigK1wZez_WoXVGM8TW2uiNKEvsCLEs4reCxtQQ/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS50ZW5vci5jb20v/NkNPTXE2ejNsNW9B/QUFBTS9ib3Nub3Yt/NjcuZ2lm.gif'></img>
                             </div>
                         </div>
-                        <button onClick={toggleCart} className="p-2 hover:bg-gray-100 rounded-full transition-colors">
+                        <button onClick={toggleCart} className="p-2 hover:bg-gray-100 rounded-full transition-colors cursor-pointer">
                             <IoClose size={28} />
                         </button>
                     </div>

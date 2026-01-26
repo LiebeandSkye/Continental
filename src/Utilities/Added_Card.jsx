@@ -56,7 +56,7 @@ const StyledWrapper = styled.div`
   .card {
     position: fixed;
     bottom: 2rem;
-    right: 2rem;  
+    right: 2rem; 
     width: 360px;
     height: 150px;
     background-color: #fff;
@@ -66,7 +66,13 @@ const StyledWrapper = styled.div`
     display: flex;
     align-items: center;
   }
-
+  @media (max-width: 400px) {
+    .card {
+      width: 360px;
+      bottom: 2rem;
+      right: 1rem;
+    }
+}
   .card-wrapper {
     display: inline-flex;
     flex-wrap: nowrap;
