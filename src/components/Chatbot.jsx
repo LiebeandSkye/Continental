@@ -92,7 +92,7 @@ const Chatbot = () => {
                                     <p className="text-[10px] text-gray-400 tracking-widest pt-1/2">Powered by Groq (Gemini and gpt are expensive)</p>
                                 </div>
                             </div>
-                            <button onClick={() => setIsOpen(false)} className="hover:rotate-90 transition-transform duration-300 absolute top-3 right-3">
+                            <button onClick={() => setIsOpen(false)} className="hover:rotate-90 transition-transform duration-300 absolute top-5 right-5 md:top-3 md:right-4">
                                 <IoClose size={24} />
                             </button>
                         </div>
