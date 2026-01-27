@@ -8,7 +8,7 @@ import Chisa from '../assets/Chisa.jpg'
 import Burger from '../Utilities/Burger'
 import '../global.css'
 
-const Nav = () => {
+const Nav = (name) => {
     const { toggleCart, cartItems } = useCart();
     const [isOpen, setIsOpen] = useState(false);
     const [showProfileMenu, setShowProfileMenu] = useState(false);

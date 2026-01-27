@@ -8,6 +8,7 @@ import Added_Card from '../Utilities/Added_Card'
 import ProCard from './ProCard'
 import Footer from './Footer'
 import { CiFilter } from "react-icons/ci";
+import Chatbot from './Chatbot'
 
 const Home = () => {
     const [showToast, setShowToast] = useState(false);
@@ -67,6 +68,7 @@ const Home = () => {
                     <Card onAdd={handleAddToCart} searchTerm={searchTerm} filters={filters}/>
                 </div>
             </div>
+            <Chatbot />
 
             <Added_Card
                 isVisible={showToast} 
