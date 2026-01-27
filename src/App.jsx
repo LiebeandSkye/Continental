@@ -7,7 +7,7 @@ import Contact from './components/Contact'
 import Home from './components/Home'
 import CartDrawer from './components/CartDrawer' // Import this
 import { CartProvider } from './components/CartContext'
-
+import Chatbot from './components/Chatbot'
 const App = () => {
   return (
     <CartProvider>
@@ -22,6 +22,7 @@ const App = () => {
               <Route path="/contact" element={<Contact />} />
             </Routes>
           </main>
+          <Chatbot/>
           <Footer/>
         </div>
       </Router>

@@ -38,7 +38,7 @@ const Chatbot = () => {
             if (lowInput.includes('price') || lowInput.includes('cost')) {
                 botReply = "Our premium vehicles range from $40,000 to over $5,000,000. You can see specific pricing in our Shop section.";
             } else if (lowInput.includes('location') || lowInput.includes('where')) {
-                botReply = "Our showroom is located at ETEC Center II, Phnom Penh. Visit our Contact page for more info";
+                botReply = "it is located at ETEC Center II, Phnom Penh. Visit our Contact page for more info. can send us a message too if u want we will try to get back as soon as possible (maybe)";
             } else if (lowInput.includes('brand') || lowInput.includes('porsche') || lowInput.includes('ferrari')) {
                 botReply = "We specialize in German, Italian, and British luxury brands. Which one are you interested in?";
             } else if (lowInput.includes('hi') || lowInput.includes('hello') || lowInput.includes('hey')) {
@@ -53,6 +53,8 @@ const Chatbot = () => {
                 botReply = "aight sure anything else?";
             } else if (lowInput.includes('what') || lowInput.includes('wat') || lowInput.includes('wut')) {
                 botReply = 'what?';
+            } else if (lowInput.includes('about')) {
+                botReply = 'its about... meh am lazy to explain just go check the about page bro also dont forget to rate my service a solid 5 stars out of 5';
             }
             setMessages(prev => [...prev, { role: 'bot', text: botReply }]);
         }, 800);

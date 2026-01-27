@@ -68,7 +68,6 @@ const Home = () => {
                     <Card onAdd={handleAddToCart} searchTerm={searchTerm} filters={filters}/>
                 </div>
             </div>
-            <Chatbot />
 
             <Added_Card
                 isVisible={showToast} 
