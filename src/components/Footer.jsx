@@ -19,16 +19,14 @@ const Footer = () => {
 
     return (
         <footer className='bg-[#0a0a0a] text-white pt-24 pb-12 px-6 relative overflow-hidden'>
-            {/* Subtle Gradient Glow for a Premium Feel */}
             <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-[1px] bg-gradient-to-r from-transparent via-gray-700 to-transparent" />
 
             <div className='max-w-7xl mx-auto'>
                 <div className='grid grid-cols-1 md:grid-cols-12 gap-12 mb-20'>
                     
-                    {/* Brand / Logo Section */}
+                    {/* logo */}
                     <div className='md:col-span-4 space-y-8'>
                         <div className="flex items-center gap-3">
-                            {/* Replace this div with your actual <img> tag */}
                             <div className="w-12 h-12 bg-white rounded-xl flex items-center justify-center">
                                 <img src={LogoDeer}></img>
                             </div>
