@@ -1,12 +1,11 @@
 import React, { useState } from "react";
 import { CoData } from "../Data/ContactData.jsx";
-import Image from "../assets/Image.png";
 import Car3 from "../assets/Car3.mp4";
 
 const Contact = () => {
     const [isSent, setIsSent] = useState(false);
-    const address = "ETEC Center II, Phnom Penh";
-    const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(address)}`;
+
+    const mapEmbedUrl = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3908.8715891787114!2d104.8884612!3d11.5620074!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x310951601e309fbd%3A0x2bbb7a5f2162e106!2sETEC%20Center%20II!5e0!3m2!1sen!2skh!4v1700000000000!5m2!1sen!2skh";
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -28,7 +27,7 @@ const Contact = () => {
 
             <div className="relative z-10 pt-[45vh]">
                 <div className="max-w-7xl mx-auto px-4 pb-20 sm:px-6">
-                    <div className="bg-white w-full rounded-[3rem] lg:rounded-[4rem] shadow-[0_20px_50px_rgba(0,0,0,0.1),0_10px_15px_rgba(0,0,0,0.02)] border border-gray-100 hover:-translate-y-2 transition-all duration-700 ease-in-out overflow-hidden">
+                    <div className="bg-white w-full rounded-[3rem] lg:rounded-[4rem] shadow-[0_20px_50px_rgba(0,0,0,0.1),0_10px_15px_rgba(0,0,0,0.02)] border border-gray-100 overflow-hidden">
                         
                         <div className="px-6 py-20 lg:p-24">
                             <div className="mb-24 text-center flex flex-col justify-center items-center">
@@ -42,21 +41,19 @@ const Contact = () => {
 
                             <div className="grid grid-cols-1 lg:grid-cols-2 gap-24 items-start">
                                 
-                                {/* Form Area with Animation Overlay */}
+                                {/* Form Area */}
                                 <div className="space-y-12 relative min-h-[400px]">
                                     <h3 className="text-xs font-black uppercase tracking-[0.5em] text-gray-900">67 form</h3>
-                                    {/* Success Message Overlay */}
                                     <div className={`absolute inset-0 bg-white z-20 flex flex-col items-center justify-center transition-all duration-500 ${isSent ? 'opacity-100 visible' : 'opacity-0 invisible pointer-events-none'}`}>
                                         <div className="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mb-4">
-                                            <svg className="w-10 h-10 text-green-600 animate-[stroke_0.6s_ease-in-out]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <svg className="w-10 h-10 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" d="M5 13l4 4L19 7"></path>
                                             </svg>
                                         </div>
                                         <h2 className="text-2xl font-bold">Message Sent!</h2>
-                                        <p className="text-gray-500 mt-2">We'll get back to you shortly. Maybe.</p>
+                                        <p className="text-gray-500 mt-2">We'll get back to you shortly.</p>
                                     </div>
 
-                                    {/* The Form */}
                                     <form onSubmit={handleSubmit} className={`space-y-10 transition-opacity duration-500 ${isSent ? 'opacity-0' : 'opacity-100'}`}>
                                         <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
                                             <div className="border-b-2 border-gray-300 focus-within:border-black transition-all py-2">
@@ -78,7 +75,7 @@ const Contact = () => {
                                     </form>
                                 </div>
 
-                                {/* Info Area */}
+                                {/* Info Area & Interactive Map */}
                                 <div className="lg:pl-10 space-y-16">
                                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-12">
                                         {CoData.map((item, index) => (
@@ -98,15 +95,15 @@ const Contact = () => {
                                     </div>
 
                                     {/* Map Area */}
-                                    <div className="relative overflow-hidden rounded-[2.5rem] aspect-video group cursor-pointer shadow-inner border border-gray-100" 
-                                    onClick={() => window.open(mapsUrl, '_blank')}>
-                                        <img src={Image} alt="Showroom Location" className="w-full h-full object-cover md:grayscale transition-all duration-1000 group-hover:grayscale-0 group-hover:scale-110" />
-                                        <div className="absolute inset-0 md:bg-black/20 group-hover:bg-transparent transition-colors duration-500" />
-                                        <div className="absolute inset-0 flex items-end mb-8 justify-center opacity-0 group-hover:opacity-100 transition-all duration-500 transform translate-y-4 group-hover:translate-y-0">
-                                            <span className="bg-white/90 backdrop-blur-md px-8 py-3 rounded-full text-[10px] font-bold tracking-widest uppercase shadow-xl border border-white">
-                                                Get Directions
-                                            </span>
-                                        </div>
+                                    <div className="relative overflow-hidden rounded-[2.5rem] aspect-video group">
+                                        <iframe 
+                                            src={mapEmbedUrl}
+                                            className="w-full h-full border-0"
+                                            allowFullScreen="" 
+                                            loading="lazy" 
+                                            referrerPolicy="no-referrer-when-downgrade">
+                                            
+                                        </iframe>
                                     </div>
                                 </div>
                             </div>

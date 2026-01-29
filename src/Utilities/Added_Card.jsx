@@ -19,7 +19,7 @@ const Added_Card = ({ isVisible, onClose, productName, productPrice }) => {
 
   return (
     <StyledWrapper>
-      <div className="card fixed bottom-8 right-8 z-9999 animate-slide-in border border-gray-500">
+      <div className="card fixed bottom-8 right-8 z-999999999 animate-slide-in border border-gray-500">
         <div className="card-wrapper pb-3">
           <div className="card-icon ml-5 mr-3">
             <div className="icon-cart-box flex items-center justify-center">

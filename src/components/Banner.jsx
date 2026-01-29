@@ -4,7 +4,7 @@ const Banner = () => {
     const slides = [
         { url: 'https://i.pinimg.com/1200x/55/9c/61/559c6147ac7363568a65a6f044958d32.jpg', title: 'Luxury Sedan' },
         { url: 'https://i.pinimg.com/1200x/37/bc/48/37bc486f89bc4bc3fcc98d430b859f05.jpg    ', title: 'Sport SUV' },
-        { url: 'https://i.pinimg.com/736x/71/24/16/71241654dc69ebf3d570c67aa6c04fba.jpg', title: 'Electric Future' }
+        { url: 'https://i.pinimg.com/1200x/e9/03/b3/e903b3c608f0a221a0cc6735909da74f.jpg', title: 'Electric Future' }
     ];
 
     const [currentIndex, setCurrentIndex] = useState(0);
@@ -25,7 +25,7 @@ const Banner = () => {
                 style={{ backgroundImage: `url(${slides[currentIndex].url})` }}
                 className='w-full h-full rounded-3xl bg-center bg-cover duration-500 shadow-xl relative'
             >
-                <div className='absolute inset-0 bg-black/30 rounded-3xl'></div>  
+                <div className='absolute inset-0 bg-black/20 rounded-3xl'></div>  
                 <div className='absolute bottom-6 left-6 md:bottom-12 md:left-12 text-white'>
                     <h2 className='md:text-5xl text-3xl font-bold md:mb-7 mb-4 drop-shadow-lg'>
                         {slides[currentIndex].title}
