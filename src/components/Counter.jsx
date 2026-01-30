@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 
-export default function Counter({ target = 2200, duration = 2500 }) {
+export default function Counter({ target, duration = 2500, suffix = "+" }) {
     const [count, setCount] = useState(0);
     const ref = useRef(null);
     const started = useRef(false);
@@ -17,7 +17,6 @@ export default function Counter({ target = 2200, duration = 2500 }) {
                     const animate = (currentTime) => {
                         const elapsed = currentTime - startTime;
                         const progress = Math.min(elapsed / duration, 1);
-
                         const easedProgress = easeOutCubic(progress);
                         const value = Math.floor(easedProgress * target);
 
@@ -29,7 +28,6 @@ export default function Counter({ target = 2200, duration = 2500 }) {
                             setCount(target);
                         }
                     };
-
                     requestAnimationFrame(animate);
                 }
             },
@@ -41,11 +39,8 @@ export default function Counter({ target = 2200, duration = 2500 }) {
     }, [target, duration]);
 
     return (
-        <span
-            ref={ref}
-            className="text-6xl text-white"
-        >
-            {count.toLocaleString()}+
+        <span ref={ref} className="text-6xl font-bold text-white">
+            {count.toLocaleString()}{suffix}
         </span>
     );
 }
