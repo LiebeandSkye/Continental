@@ -89,7 +89,7 @@ const Chatbot = () => {
                                 </div>
                                 <div className='flex items-center pt-2 pointer-events-none'>
                                     <MdAssistant className='text-xs mr-1'/>
-                                    <p className="text-[10px] text-gray-400 tracking-widest pt-1/2">Powered by Groq (Gemini and chatgpt are expensive)</p>
+                                    <p className="text-[10px] text-gray-400 tracking-widest pt-1/2">Powered by Groq (Gemini and gpt are expensive)</p>
                                 </div>
                             </div>
                             <button onClick={() => setIsOpen(false)} className="hover:rotate-90 transition-transform duration-300 absolute top-4 right-5 cursor-pointer hidden md:block">
