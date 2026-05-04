@@ -1,16 +1,62 @@
-# React + Vite
+# 🚗 Continental Premium Cars
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+An elite car e-commerce platform based in **Phnom Penh, Cambodia**, designed for a modern, high-end user experience. Continental Premium Cars offers a curated selection of premium vehicles with an immersive, responsive interface powered by cutting-edge web technologies.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## ✨ Key Features
 
-## React Compiler
+- **🤖 Groq-Powered AI Assistant** — A draggable, Gen Z-styled virtual assistant powered by the Groq SDK (Llama-3.3-70b-versatile) to help users with car recommendations and inquiries.
+- **🛒 Cart & Checkout System** — Full cart management using React Context and a stylized checkout flow.
+- **🔍 Advanced Filtering** — Dynamic car filtering by category, brand, and origin for effortless car discovery.
+- **📽️ Dun Tach Video Experience** — An immersive video overlay feature for a cinematic browsing experience.
+- **📱 Fully Responsive** — Optimized for both desktop and mobile users with Tailwind CSS v4.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+## 🛠️ Tech Stack
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+| Layer | Technology |
+|---|---|
+| **Frontend** | React 19, Vite, Tailwind CSS v4, Styled Components |
+| **AI** | Groq SDK (Llama-3.3-70b-versatile) |
+| **Utilities** | AOS (Animate on Scroll), React Icons, React Draggable |
+
+---
+
+## 🚀 Getting Started
+
+### Prerequisites
+
+- [Node.js](https://nodejs.org/) (v18 or higher recommended)
+- npm
+
+### Installation
+
+```bash
+# Clone the repository
+git clone https://github.com/LiebeandSkye/Continental.git
+
+# Navigate into the project directory
+cd Continental
+
+# Install dependencies
+npm install
+```
+
+### Development Scripts
+
+```bash
+# Start the development server
+npm run dev
+
+# Build for production
+npm run build
+
+# Run the linter
+npm run lint
+```
+
+---
+
+*Built with ❤️ in Phnom Penh, Cambodia.*
