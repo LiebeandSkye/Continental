@@ -122,7 +122,7 @@ const About = () => {
                     <div className="w-full md:w-1/2 text-white space-y-4 text-center md:text-left">
                         <h2 className="text-4xl md:text-5xl font-bold">Our Picture</h2>
                         <p className="text-gray-300 leading-relaxed text-sm md:text-base">
-                            Only two dudes (dude at the very front and dude at the very back) from
+                            Only two dudes (mine got cut out but its fine, and the other one is hm yeah) from
                             the pic worked on this web, but we wanted to put everyone because
                             we think it's a good idea. Maybe not, but we do think it's a good idea.
                         </p>
